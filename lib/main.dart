@@ -1,11 +1,10 @@
-
+import 'package:atm_project/consts.dart';
 import 'package:atm_project/splash/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
 
   await Firebase.initializeApp();
 
@@ -18,15 +17,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        backgroundColor: purple,
+        fontFamily: 'JosefinSans',
+        primarySwatch: Colors.deepPurple,
       ),
       home: const SplashScreen(),
     );
   }
 }
-
-

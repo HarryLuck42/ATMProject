@@ -14,21 +14,19 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   final auth = FirebaseAuth.instance;
 
   @override
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 2), () async {
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
         final user = auth.currentUser;
-        if(user != null){
+        if (user != null) {
           return AtmMainScreen();
-        }else{
+        } else {
           return LoginScreen();
         }
-
       }));
     });
   }
@@ -37,10 +35,12 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: SvgPicture.asset(iconCreditCard),
+        child: SvgPicture.asset(
+          iconCreditCard,
+          width: 150,
+          height: 150,
+        ),
       ),
     );
   }
-
-
 }

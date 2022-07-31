@@ -13,7 +13,8 @@ class CustomField extends StatelessWidget {
       required this.textEditingController,
       this.inputType,
       this.maxLength,
-      this.onChanged, this.isPassword = false})
+      this.onChanged,
+      this.isPassword = false})
       : super(key: key);
 
   @override
@@ -37,7 +38,8 @@ class CustomField extends StatelessWidget {
               borderSide: const BorderSide(color: Colors.grey, width: 1)),
           hintStyle: const TextStyle(color: Colors.grey),
           hintText: hints,
-          fillColor: Colors.transparent),
+          filled: true,
+          fillColor: Colors.white),
     );
   }
 }
